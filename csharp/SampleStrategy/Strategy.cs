@@ -1,8 +1,8 @@
 ﻿namespace SampleStrategy
 {
-    using System;
     using BlackBox;
     using System.ComponentModel.Composition;
+
 
     [Export(typeof(IStrategy))]
     public class Strategy : IStrategy
@@ -11,11 +11,9 @@
         {
             get
             {
-                return "YOUR_SHORT_NAME_HERE";
+                return "MAKE_IT_RAIN!";
             }
         }
-
-        private bool _hasPosition = true;
 
         /// <summary>
         /// Implement this method with your trading strategy
@@ -27,13 +25,14 @@
         /// </summary>
         /// <param name="price">Current price for Equity</param>
         /// <returns>You need to return one decission out of three possible - Buy, Sell or DoNothing</returns>
+        /// 
+
+
+
         public TradeAction Run(decimal price)
         {
-            _hasPosition = !_hasPosition;
-            if (_hasPosition)
-                return TradeAction.Sell;
-
-            return TradeAction.Buy;
+            return TradeAction.DoNothing;   
         }
+
     }
 }

@@ -5,7 +5,8 @@
     using System.ComponentModel.Composition;
     using Microsoft.VisualStudio.TestTools.UnitTesting;
     using System.Collections.Generic;
-
+    using SampleStrategyStrategy;
+    using System.Diagnostics;
     [TestClass]
     public class StrategyTests
     {
@@ -29,6 +30,12 @@
             IStrategy strategy = new Strategy();
 
             Assert.IsTrue(BuysFirst(strategy, _upPrices));
+        }
+
+        [TestMethod]
+        public void RealTest()
+        {
+            Runner.run();
         }
 
         [TestMethod]
